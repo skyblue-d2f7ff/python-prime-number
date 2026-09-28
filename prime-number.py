@@ -1,8 +1,10 @@
-# prime-number.py - 소수 구하기 기본로직완성
-print("1부터 100 사이의소수를구합니다.")
+# prime-number.py - 제곱근을 이용한속도최적화버전
+import math
+print("1부터 100 사이의소수(최적화버전):")
 for num in range(2, 101):
     is_prime = True
-    for i in range(2, num):
+    # 제곱근까지만나누어떨어지는지확인하여연산속도대폭향상
+    for i in range(2, int(math.sqrt(num)) + 1):
         if num % i == 0:
             is_prime = False
             break
